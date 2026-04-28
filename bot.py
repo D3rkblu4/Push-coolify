@@ -11,7 +11,8 @@ import os
 
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 ADMIN_CHAT_ID = int(os.getenv("ADMIN_CHAT_ID"))
-
+DB_PATH = os.path.join(os.getcwd(), "news.db")
+conn = sqlite3.connect(DB_PATH, check_same_thread=False)
 CHANNELS = {
     "economy": "@economyosint",
     "gaming": "@gamingosint",
